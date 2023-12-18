@@ -23,6 +23,7 @@ const contactsSlice = createSlice({
   extraReducers: {
     [fetchContacts.fulfilled]: (state, { payload }) => {
       state.items = payload;
+      state.isLoading = false;
     },
     [fetchContacts.pending]: handlePending,
     [fetchContacts.rejected]: handleRejected,
